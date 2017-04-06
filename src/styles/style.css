@@ -27,6 +27,7 @@ html, body {
 .site__item:hover {
 	border-radius: 10px;
 	background: #FD00BE;
+	transition: .5s;
 }
 
 .site__link {
