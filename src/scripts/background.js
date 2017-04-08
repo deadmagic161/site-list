@@ -1,7 +1,7 @@
 var dataJson = [];
 var newDataJson = [];
 
-var updateJson = function() {
+function updateJson() {
 	$.getJSON('http://www.softomate.net/ext/employees/list.json', function(data) {
 		for (var i = 0; i < data.length; i++){
 			dataJson[i] = data[i];
@@ -9,7 +9,7 @@ var updateJson = function() {
 	});
 }
 
-var newDataJsonItem = function (site, flag, counter){
+function newDataJsonItem (site, flag, counter){
 	this.site = site;
 	this.flag = flag;
 	this.counter = counter;
@@ -26,11 +26,11 @@ setTimeout(function(){
 }, 2500);
 
 chrome.runtime.onConnect.addListener(function(port) {
-	port.onMessage.addListener(function(message) {
+	port.onMessage.addListener(function(msg) {
 		for (var i = 0; i < newDataJson.length; i++){
-			if(message.site == 'www.' +newDataJson.site.domain){
+			if(msg.site == 'www.' +newDataJson.site.domain){
 				newDataJson[i].counter++;
-				if (message.flag){
+				if (msg.flag){
 					newDataJson[i].flag = true;
 				}
 				else if ((newDataJson[i].counter <= 6)&&(!newDataJson[i].flag)){

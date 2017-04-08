@@ -1,0 +1,29 @@
+{
+"manifest_version": 2,
+"name": "Site list",
+"description": "Тестовое задание Softomate",
+"version": "1.1",
+"icons": {
+"1": "src/image/list.png"
+},
+"content_scripts": [
+    {
+      "matches": [ "*://*/*" ],      
+      "css":["src/styles/style.css"],
+      "js": [ "src/scripts/content.js" ]
+    }
+],
+"background": {
+    "scripts": ["src/scripts/jquery.js", "src/scripts/background.js"]
+},
+"permissions": [
+    "http://www.softomate.net/ext/employees/*",
+    "tabs"
+],
+"browser_action": {
+        "default_title": "Sites List",
+        "default_icon": "src/image/list.png",
+        "default_popup": "index.html"
+}
+
+}

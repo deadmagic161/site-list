@@ -5,7 +5,6 @@ html, body {
 
 .wrapper {
 	background: #FF99FE;
-	margin: 0 auto;
 }
 
 .site-wrapper {
@@ -31,8 +30,27 @@ html, body {
 }
 
 .site__link {
-	cursor: pointer;
 	color: #6D586D;
 	text-decoration: none;
-	
+	padding: 20px;
+ 	font: 700 14px sans-serif;
+ 	text-align: center;
 }
+
+.message__block {
+    position: fixed;
+    top: 0; right: 50px;
+    width: 300px;
+    border: 1px solid;
+    z-index: 9999;
+    padding: 10px 20px;
+    opacity: 0.8;
+    background: #33CCCC;
+    text-align: center;
+}
+
+.message__button {
+    padding: 5px 10px;
+ 	font: 700 14px sans-serif;
+}
+

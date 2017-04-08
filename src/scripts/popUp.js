@@ -9,7 +9,7 @@ $.getJSON('http://www.softomate.net/ext/employees/list.json', function(data){
 		link = document.createElement('a');
 		link.innerHTML = data[i].name;
 		link.setAttribute('class', 'site__link');
-		link.setAttribute('href', 'http://www.'+data[i].domain);
+		link.setAttribute('href', 'https://www.'+data[i].domain);
 		link.setAttribute('target', '_blank');
 
 		$(item).append(link);
